@@ -10,6 +10,10 @@
                 "$ref": "User.json"
             },
             "uniqueItems": true
+        },
+        "groupType" : {
+            "type" : "string",
+            "enum" : ["one", "secondOne", "3rd one"]
         }
     }
 }
