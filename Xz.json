@@ -1,7 +1,6 @@
-
 {
-    "type": "object",
-    "title": "User",
+    "type": "xz",
+    "title": "Xz",
     "properties": {
         "id": {
             "type": "string"
