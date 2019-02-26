@@ -1,0 +1,15 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Swagger Petstore
+  description: |-
+    Пример описания сервисов и моделей. Данный вид разбиения на папки, считать всего лишь демонстрацией такой возможности
+  license:
+    name: MIT
+servers:
+  - url: http://localhosts/v1
+paths:
+  /pets:
+    $ref: ./petstore/paths.yaml#/~1pets
+  /pets/{petId}:
+    $ref: ./petstore/paths.yaml#/~1pets~1{petId}

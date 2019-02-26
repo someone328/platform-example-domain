@@ -1,0 +1,28 @@
+/pets:
+  $ref: ./pets.yaml
+/pets/{petId}:
+  get:
+    summary: Информация по конкретному питомцу
+    operationId: showPetById
+    tags:
+      - pets
+    parameters:
+      - name: petId
+        in: path
+        required: true
+        description: Id питомца, для его поиска
+        schema:
+          type: string
+    responses:
+      200:
+        description: Ожидаемый ответ, на валидный запрос
+        content:
+          application/json:
+            schema:
+              $ref: ./model/Pet.yaml
+      default:
+        description: Непредвиденная ошибка
+        content:
+          application/json:
+            schema:
+              $ref: ../model/common/Error.yaml
