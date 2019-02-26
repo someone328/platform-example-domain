@@ -32,9 +32,14 @@
               $ref: ../model/common/Error.yaml
   post:
     summary: Сохранить питомца
-    operationId: createPets
+    operationId: savePet
     tags:
       - pets
+    parmeters:
+      - name: pet
+        required: true
+        schema:
+          $ref: ./model/Pet.yaml
     responses:
       201:
         description: Пустой ответ

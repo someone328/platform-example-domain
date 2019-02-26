@@ -1,4 +1,0 @@
-Pet:
-  $ref: Pet.yaml
-Pets:
-  $ref: Pets.yaml
