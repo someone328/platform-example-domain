@@ -14,3 +14,15 @@ paths:
     $ref: ./petstore/paths.yaml#/~1pets
   /pets/{petId}:
     $ref: ./petstore/paths.yaml#/~1pets~1{petId}
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://example.com/oauth/authorize
+          tokenUrl: https://example.com/oauth/token
+          scopes:
+            read: Grants read access
+            write: Grants write access
+            admin: Grants access to admin operations

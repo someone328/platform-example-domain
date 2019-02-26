@@ -23,23 +23,24 @@
         content:
           application/json:
             schema:
-              $ref: ./model/Pets.yaml
+              $ref: petstore/model/Pets.yaml
       default:
         description: Непредвиденная ошибка
         content:
           application/json:
             schema:
-              $ref: ../model/common/Error.yaml
+              $ref: model/common/Error.yaml
   post:
     summary: Сохранить питомца
     operationId: savePet
     tags:
       - pets
-    parmeters:
-      - name: pet
-        required: true
-        schema:
-          $ref: ./model/Pet.yaml
+    requestBody:
+      content: 
+        'application/json':
+          schema:
+            $ref: petstore/model/Pet.yaml
+      required: true
     responses:
       201:
         description: Пустой ответ
@@ -48,7 +49,11 @@
         content:
           application/json:
             schema:
-              $ref: ../model/common/Error.yaml
+              $ref: model/common/Error.yaml
+    security:
+      - OAuth2:
+        - admin
+        - write
 /pets/{petId}:
   get:
     summary: Информация по конкретному питомцу
@@ -68,10 +73,10 @@
         content:
           application/json:
             schema:
-              $ref: ./model/Pet.yaml
+              $ref: petstore/model/Pet.yaml
       default:
         description: Непредвиденная ошибка
         content:
           application/json:
             schema:
-              $ref: ../model/common/Error.yaml
+              $ref: model/common/Error.yaml
