@@ -1,4 +1,6 @@
 /pets:
+  summary: '123'
+  description: '456'
   get:
     summary: Получить список всех питомцев
     operationId: listPets
@@ -8,7 +10,7 @@
       - name: limit
         in: query
         description: Лимит объектов в ответе на запрос (max 100)
-        required: false
+        required: false    
         schema:
           type: integer
           format: int32

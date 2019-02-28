@@ -1,6 +1,6 @@
 openapi: "3.0.0"
 info:
-  version: 1.0.0
+  version: '9.1'
   title: Swagger Petstore
   description: |-
     ## Пример описания сервисов и моделей. 
@@ -13,6 +13,7 @@ servers:
       basePath:
         default: v1
 paths:
+  x-apiVersion: v1
   /pets:
     $ref: ./petstore/paths.yaml#/~1pets
   /pets/{petId}:
