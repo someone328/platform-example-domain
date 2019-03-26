@@ -1,3 +1,5 @@
+description: |-
+  Класс - хранилище нескольких сущностей
 type: array
 items:
   $ref: ./Pet.yaml
