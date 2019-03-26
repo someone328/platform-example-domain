@@ -3,10 +3,17 @@ description: |-
 required:
   - id
   - name
+x-jpa:
+  - type: Entity
+  - type: Table
+    parameters:
+      - name: '"pet_table"'
 properties:
   id:
     type: integer
     format: int64
+    x-jpa:
+      - type: Id
   name:
     type: string
   tag:
